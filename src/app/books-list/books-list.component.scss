@@ -1,0 +1,20 @@
+table {
+    width: 80%;
+    margin: 20px auto;
+  }
+th{
+    background-color: #ffb71c;
+    color:navy;
+
+}
+img {
+    max-height: 50px;
+  }
+
+  tr{
+      cursor: pointer;
+      
+  }
+  tr:hover{
+      background-color: #fff9b2;
+  }
