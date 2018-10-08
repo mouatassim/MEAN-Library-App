@@ -3,9 +3,7 @@ import { Book } from './book-model'
 import {mock} from './../mock.js'
 import { DataService } from './../data.service'
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class BooksService {
 
   books: Book[]=[];
@@ -24,21 +22,40 @@ export class BooksService {
 
   //getBooks using HTTP
   getBooks2(){
-    this.dataService.getBooks().subscribe(
-      data => { 
-        this.bookGeter = data
+      return this.dataService.getBooks()
+ 
+};
+  /*
+  subscribe(
+      (data) => { 
+       this.bookGeter = data ;
+             
+        this.bookGeter.map(book=>{
+        this.books.push(new Book(book.isbn,book.author,book.title,book.language,book.type,book.nbrPages,book.publisher,book.year,book.cover,book.description));
+        })
+        //console.log("here",this.books.length);
+        
       },
      err => console.error(err),
       () => console.log('done loading books')
-    )
-
-    mock.map(book=>{
-      this.books.push(new Book(book.isbn,book.author,book.title,book.language,book.type,book.nbrPages,book.publisher,book.year,book.cover,book.description));
-    })
-    
-    return this.books;
       
+    )
+   // console.log(this.books.length);
+    
+    return this.books; 
   };
+   */
+    
+   
+      
+  
+
+  addBook(book){
+    this.dataService.addBook(book);
+        
+    }
+    
+}
 
   
-}
+

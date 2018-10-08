@@ -1,0 +1,91 @@
+<form>
+
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Title</label>
+      <input type="title" value="mota" class="form-control"  placeholder="Title" ref-titleBook>
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Author</label>
+      <input type="author" class="form-control" placeholder="Author" ref-authorBook>
+    </div>
+  </div>
+
+  <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="Language">Language</label>
+        <select class="form-control" ref-languageBook>
+            <option selected>Choose...</option>
+            <option> Arabic </option>
+            <option> English </option>
+            <option> French </option>
+          </select>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="inputType">Type</label>
+        <select id="inputState" class="form-control" ref-typeBook>
+          <option selected>Choose...</option>
+          <option>History</option>
+          <option>Technology</option>
+          <option>Economic</option>
+          <option>Phylosophy</option>
+        </select>
+      </div>
+      <div class="form-group col-md-2">
+        <label for="inputZip">Number of pages</label>
+        <input value= "25" type="text" class="form-control" id="inputZip" ref-nbrPagesBook>
+      </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-8">
+        <label for="inputPublishing">Publishing</label>
+        <input class="form-control rounded-0" placeholder="Publishing"ref-publisherBook>
+    </div>
+    <div class="form-group col-md-4">
+        <label for="inputYear">Year of Publishing</label>
+        <input class="form-control rounded-0" placeholder="Year of Publishing"ref-yearBook>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="inputAddress2">Description</label>
+    <textarea class="form-control rounded-0"  placeholder="Description ...." rows="3" ref-descriptionBook></textarea>
+  </div>
+
+ 
+
+
+  <!-- <div class="form-group">  
+    <div class="col-xs-12 col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">  
+      //this is comment image-preview-filename input [CUT FROM HERE]
+        <div class="input-group image-preview">
+          <input type="text" class="form-control image-preview-filename" disabled="disabled"> 
+          <span class="input-group-btn">
+           
+              <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                  <span class="glyphicon glyphicon-remove"></span> Clear
+              </button>
+              
+              <div class="btn btn-default image-preview-input">
+                  <span class="glyphicon glyphicon-folder-open"></span>
+                  <span class="image-preview-input-title">Browse</span>
+                  <input type="file" accept="image/png, image/jpeg, image/gif" name="input-file-preview"/>
+              </div>
+          </span>
+      </div> 
+    </div>
+  </div> -->
+
+
+  <div class="form-row col-md-10 col-sm-offset-1">
+      <button  class="btn btn-primary form-group col-md-10 col-sm-offset-1 col-sm-offset-11" (click)="addBook()">Show Book</button>
+  </div>
+  <br>
+  <div class="form-row col-md-10 col-sm-offset-1">
+      <button  class="btn btn-success form-group col-md-10 col-sm-offset-1 col-sm-offset-11">Add Book</button>
+  </div>
+  
+</form>
+
+ {{ descriptionBook.value }} 

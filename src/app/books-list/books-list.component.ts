@@ -1,8 +1,8 @@
 import { OnInit, Component } from '@angular/core';
 import { Book } from './book-model'
 import { BooksService } from './books.service';
-import { MatTableDataSource } from '@angular/material';
 
+import { Router, ActivatedRoute} from '@angular/router'
 
 @Component({
   selector: 'app-books-list',
@@ -15,14 +15,26 @@ export class BooksListComponent implements OnInit  {
 
   displayedColumns: string[] = ['isbn','author','title','cover','edit','delete'];
   books : Book[];
+  bookGeter;
 
 
-  constructor(public booksSerivce : BooksService){}
+
+  constructor(public booksSerivce : BooksService,private router:Router,private route:ActivatedRoute){}
   
   ngOnInit(){
-  this.books = this.booksSerivce.getBooks2();  
+     
+      this.booksSerivce.getBooks2().subscribe(data =>{
+       console.log(typeof(data));
+       this.books = Object.values(data); 
+   })
+    
+
   
-   }
+   
+}
+ 
+  
+   
 
    
   
@@ -31,5 +43,10 @@ export class BooksListComponent implements OnInit  {
     console.log(this.books[IndexTr-1]);
        
   }
+
+  onNavigate(){
+    this.router.navigate(['new']);
+   }
+ 
   
 }

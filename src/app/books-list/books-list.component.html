@@ -1,3 +1,29 @@
+<div class="form-row">
+  <div class="form-group col-md-8">
+      
+      <input class="form-control rounded-0" placeholder="Find book author ...">
+  </div>
+  <div class="form-group col-md-4">
+      <button class= "col-sm-2 btn btn-primary" >find</button>
+  </div>
+</div>
+
+<hr>
+
+
+<div class="form-row">
+<button  class="btn btn-success a-btn-slide-text  glyphicon glyphicon-plus" (click)="onNavigate()">
+  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+  <span><strong>New Book</strong></span>            
+</button>
+</div>
+
+
+
+<div class="row" > 
+
+<div class="col-sm-12">
+
 <table mat-table [dataSource]="books" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -49,3 +75,4 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
+</div>

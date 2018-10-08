@@ -20,7 +20,10 @@ app.use(express.static(__dirname + '/../dist/MEAN-Library-App'));
 
 require('./routes')(app);
 
-
+// Handles any requests that don't match the ones above
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname +'/../dist/MEAN-Library-App/index.html'));
+});
 //start server
 app.listen(8080,()=>{
     console.log('>>> Open http://127.0.0.1:%s/ in your browser.','8080');
